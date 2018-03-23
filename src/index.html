@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>陈君创造的编辑器-v1.0原形</title>
+  <style type="text/css">
+	body,html{
+		margin:0px;
+		height:100%;
+	}
+	
+	#txtEditor{
+		width:100%;
+		height:50%;
+		padding:0px;
+		margin:0px;
+		border:0px;
+		font-size: 18px;
+	}
+	#html{
+		width: 100%;	
+		color: brown;	
+	}
+	#html header{padding: 5px;color: blueviolet;}
+	#html h3{padding: 5px;}
+	#html p{padding: 5px;}
+  </style>
+  </head>
+  <body>
+	<textarea id="txtEditor"></textarea>
+	<div id = 'html'>
+			<header>html编辑器</header>
+			<section>
+				<h3>这是个标题</h3>
+				<p>第一个实例</p>
+				<p>
+						大润发的创始人：战胜了所有对手，却输给了时代。
+
+						敬他，但并不认同这句话。
+				</p>
+			</section>
+	</div>
+</body>
+  <script>
+		require('./index.js');
+		let $html = document.querySelector('#html')
+		let $edit = document.querySelector('#txtEditor')
+		$edit.addEventListener('change', function(){
+			console.log('change')
+			console.log(this.value)
+			$html.style.color =this.value
+		});
+		
+  </script>
+</html>
